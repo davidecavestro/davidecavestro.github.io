@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<div class="row">
+    <div class="large-9 columns" role="content">
+        <h4>Posts</h4>
+        <div class="posts nav">
+          {% for post in site.posts %}
+            <div>
+              <h3>
+                {% if post.external_url %}
+                  <a href="{{ post.external_url }}">{{ post.navtitle }}</a>
+                {% else %}
+                  <a href=".{{ post.url }}">{{ post.navtitle }}</a>
+                {% endif %}
+              </h3>
+              {{ post.date | date: "%b %-d, %Y" }}
+              {% if post.summary %}
+                <p> {{ post.summary }} </p>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+    </div>
+</div>

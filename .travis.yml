@@ -1,0 +1,18 @@
+language: ruby
+rvm:
+  - 2.2.0
+sudo: false
+script: bundle exec rake deploy
+
+deploy:
+  provider: pages
+  github-token: "$GITHUB_TOKEN"
+  local-dir: _site
+  target-branch: gh-pages
+  skip-cleanup: true
+  keep-history: true
+  on:
+    branch: master
+env:
+  global:
+    secure: l9THEa+ObzG5oibRj8XZmT48NOoVKrnV+jj//pks/cDQNpBeWDGJPSNrcvxoVHXOrwgNiJlAX79ODi4uvFADwg1lsKLFqriiUvCCd3r9zd3Qmbg7t3lYxn7tzht2/m1BqPOHPT7eyc+c7sRLpuEY17RnBYYfM9U6VA1pxOxlJwLzxO4HPq4YEuUu17VNpYpckw6Lzshay6+AnJmhivMrwgC6bDW3G8oPAIjpnvkm6CqhpYLxxsCd9acL14HmkOrMc9U33Il279vWLwfyenzyGKtNl3aSXlguiSB3HMHvSzNbFAjay8GleIF2nJT/rhBNkJTRBbZ5ElmEAMEmnLCzgRvir246ywAMeCDEb+dul1tdZNnQJqW4b7pBgdZ85pqghM0Z9oXoYZJWsxRA3feJkekZnHG61elWoXPiXxwWEf9fg67VPtOd/5qN/8dn0DxkpPtv7zK3qkss6fus78/rCe/7vaAohEQVY4h0Ij6G6Q7MyUgoTQ9Np8WN4whTouaQbZpyMfHEszX+Gml9D6pFQ3mzq+fN1twSvshf/bABSQE3GQI+4xKOznzIR4HV5ZQjmeD54uokniehX35wpLeUsCva2URxo8P9h5Kj6B1ErD2KghID9mamxluCU/JbHsF/QJy1cL8vw4FtDKHzNi4vBSh+iSx+F0tq6Xoa5g/PQ2M=
