@@ -3,10 +3,8 @@ source "https://rubygems.org"
 gem "jekyll", "~> 3.1"
 gem "jekyll-sitemap"
 gem "pygments.rb"
+gem 'rake-jekyll', '~> 1.1.0'
 
 group :jekyll_plugins do
-  gem 'jekyll-bootstrap'
   gem 'jekyll-asciidoc'
-  gem 'jekyll-theme-minimal'
-#  gem 'jekyll-paginate-v2'
 end
