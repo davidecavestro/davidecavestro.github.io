@@ -1,0 +1,427 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Rygel turned my Raspi3 into a DLNA movie player</title>
+    
+    <meta name="author" content="Davide Cavestro">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap styles -->
+    <link href="/assets/theme/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link href="/assets/theme/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Sticky Footer -->
+    <link href="/assets/theme/bootstrap/css/bs-sticky-footer.css" rel="stylesheet">
+    
+    <!-- Custom styles -->
+<!-- -->
+    <link href="/assets/themes/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+<!-- -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!-- Update these with your own images
+      <link rel="shortcut icon" href="images/favicon.ico">
+      <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+  </head>
+
+  <body>
+    <div id="wrap">
+      <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#jb-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Solipsistic chips</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="jb-navbar-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li><a href="/archive">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories">Categories</a></li>
+      	
+      
+    
+  
+    
+  
+    
+      
+      	
+      	<li><a href="/pages">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags">Tags</a></li>
+      	
+      
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+
+          </ul>
+          <!--
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+          -->
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+      <div class="container">
+        
+
+<div class="page-header">
+  <h1>Rygel turned my Raspi3 into a DLNA movie player </h1>
+</div>
+
+<div class="row post-full">
+  <div class="col-xs-12">
+    <div class="date">
+      <span>24 March 2019</span>
+    </div>
+    <div class="content">
+      <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#the-need">The need</a></li>
+<li><a href="#the-solution">The solution</a></li>
+<li><a href="#practical-steps">Practical steps</a>
+<ul class="sectlevel2">
+<li><a href="#install-the-system">Install the system</a></li>
+<li><a href="#install-vlc-and-rygel">Install VLC and Rygel</a></li>
+<li><a href="#auto-start-in-background">Auto start in background</a></li>
+</ul>
+</li>
+<li><a href="#install-a-dlna-sender-on-the-smartphone">Install a DLNA sender on the smartphone</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="the-need">The need</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I have a Raspberry 3 placed behind a 10 years old plasma LG tv.
+Some years ago I configured Kodi and used it for some time, but
+eventually I dismissed it. Too heavy, too slow.</p>
+</div>
+<div class="paragraph">
+<p>That raspi3 continued serving some docker containers but it was
+underutilized&#8230;&#8203; so I started exploring some minimalistic alternative
+to heavyweight mediacenters, looking only for these features:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>play audio/video streams</p>
+</li>
+<li>
+<p>remote control i.e. from a smartphone</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In the meantime I replaced my laptop hard disk with an SSD, so I
+attached it to an older raspberry 1 and got a minidlna media server.</p>
+</div>
+<div class="paragraph">
+<p>I found some articles talking about</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://raspberrypi.stackexchange.com/questions/79004/howto-install-dlna-media-renderer">using dlna to play audio</a></p>
+</li>
+<li>
+<p><a href="https://davidwiesner.github.io/posts/using-vlc-as-upnp-renderer-with-rygel/">Using VLC as UPnP renderer with rygel</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="the-solution">The solution</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I installed rygel but I got a lot of segfault and X server restart as
+soon as I started playing a movie. Then, after last updates, it started
+working like a charm.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="practical-steps">Practical steps</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="install-the-system">Install the system</h3>
+<div class="paragraph">
+<p>So I started with a fresh Raspbian Stretch Lite
+<a href="https://downloads.raspberrypi.org/raspbian_lite_latest">image</a>.</p>
+</div>
+<div class="paragraph">
+<p>I installed LXQT to have a desktop environment.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo apt-get update
+sudo apt-get install lightdm lxqt</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then I gave a <code>sudo raspi-config</code>, then hit <em>Boot Options</em>, <em>Desktop / CLI</em>
+and <em>Desktop Autologin</em> in order to have the desktop environment
+available at boot.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="install-vlc-and-rygel">Install VLC and Rygel</h3>
+<div class="paragraph">
+<p>After a reboot I installed vlc and rygel</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo apt-get install rygel vlc rygel-playbin</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and issued a <code>sudo nano /etc/rygel.conf</code> in order to enable the mpris
+support:</p>
+</div>
+<div class="paragraph">
+<p>/etc/rygel.conf</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">[MPRIS]
+enabled=true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>(MPRIS gives rygel control over VLC)</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="auto-start-in-background">Auto start in background</h3>
+<div class="paragraph">
+<p>Rygel per-se is enough to play movies, but so far I&#8217;ve not found an easy way
+to launch the player full screen. VLC can be started full screen in
+background, so that it appears only when needed, leaving the desktop
+available for other stuff when not playing movies.</p>
+</div>
+<div class="paragraph">
+<p>This is how I start automatically VLC
+~/.config/autostart/vlc.desktop</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">Name=VLC as Media Renderer
+GenericName=UPnP/DLNA Rendering Services
+Comment=UPnP/DLNA Rendering Services
+# Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+Keywords=mediarenderer;play;audio;video;pictures;
+Exec=vlc --intf dummy --fullscreen
+Terminal=false
+Type=Application
+NoDisplay=false
+StartupNotify=true
+X-GNOME-Autostart-enabled=true
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=vlc
+X-GNOME-Bugzilla-Component=general
+X-GNOME-Bugzilla-Version=3.0.6</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>I&#8217;ve linked rygel desktop config
+<code>ln -s /usr/share/applications/rygel.desktop ~/.config/autostart/rygel.desktop</code></p>
+</div>
+<div class="paragraph">
+<p>Log out and log in again.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="install-a-dlna-sender-on-the-smartphone">Install a DLNA sender on the smartphone</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Install a DLNA/UPnP Sender on the smartphone in order to control the
+player. I&#8217;ve tried BubbleUPnP and AirPinCast, they both work.</p>
+</div>
+<div class="paragraph">
+<p>Then it is just a matter of choosing the media you want to play from any
+DLNA source and stream it to the raspi renderer.</p>
+</div>
+<div class="paragraph">
+<p>Enjoy your lighweight DLNA movie player!</p>
+</div>
+</div>
+</div>
+    </div>
+
+  
+    <ul class="tag_box inline">
+      <li><i class="glyphicon glyphicon-open"></i></li>
+      
+      
+
+
+  
+     
+    	<li><a href="/categories.html#Tech-ref">
+    		Tech <span>1</span>
+    	</a></li>
+    
+  
+
+
+    </ul>
+    
+
+  
+    <ul class="tag_box inline">
+      <li><i class="glyphicon glyphicon-tags"></i></li>
+      
+      
+
+
+  
+     
+    	<li><a href="/tags.html#raspberry-ref">raspberry <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#dlna-ref">dlna <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#upnp-ref">upnp <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#mediacenter-ref">mediacenter <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+  
+    <hr>
+    <ul class="pagination">
+    
+      <li class="prev disabled"><a>&larr; Previous</a></li>
+    
+      <li><a href="/archive.html">Archive</a></li>
+    
+      <li class="next disabled"><a>Next &rarr;</a>
+    
+    </ul>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+    var disqus_developer = 1;
+    var disqus_shortname = 'davidecavestro'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+</div>
+
+
+      </div>
+
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p>&copy; 2019 Davide Cavestro</p>
+      </div>
+    </div>
+
+    
+
+
+
+
+
+    <!-- Latest compiled and minified JavaScript, requires jQuery 1.x (2.x not supported in IE8) -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/assets/theme/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
