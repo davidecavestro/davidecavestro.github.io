@@ -1,18 +1,8 @@
 language: ruby
 rvm:
-  - 2.2.0
+- 2.2.0
 sudo: false
 script: bundle exec rake deploy
-
-deploy:
-  provider: pages
-  github-token: "$GITHUB_TOKEN"
-  local-dir: _site
-  target-branch: gh-pages
-  skip-cleanup: true
-  keep-history: true
-  on:
-    branch: master
 env:
   global:
-    secure: l9THEa+ObzG5oibRj8XZmT48NOoVKrnV+jj//pks/cDQNpBeWDGJPSNrcvxoVHXOrwgNiJlAX79ODi4uvFADwg1lsKLFqriiUvCCd3r9zd3Qmbg7t3lYxn7tzht2/m1BqPOHPT7eyc+c7sRLpuEY17RnBYYfM9U6VA1pxOxlJwLzxO4HPq4YEuUu17VNpYpckw6Lzshay6+AnJmhivMrwgC6bDW3G8oPAIjpnvkm6CqhpYLxxsCd9acL14HmkOrMc9U33Il279vWLwfyenzyGKtNl3aSXlguiSB3HMHvSzNbFAjay8GleIF2nJT/rhBNkJTRBbZ5ElmEAMEmnLCzgRvir246ywAMeCDEb+dul1tdZNnQJqW4b7pBgdZ85pqghM0Z9oXoYZJWsxRA3feJkekZnHG61elWoXPiXxwWEf9fg67VPtOd/5qN/8dn0DxkpPtv7zK3qkss6fus78/rCe/7vaAohEQVY4h0Ij6G6Q7MyUgoTQ9Np8WN4whTouaQbZpyMfHEszX+Gml9D6pFQ3mzq+fN1twSvshf/bABSQE3GQI+4xKOznzIR4HV5ZQjmeD54uokniehX35wpLeUsCva2URxo8P9h5Kj6B1ErD2KghID9mamxluCU/JbHsF/QJy1cL8vw4FtDKHzNi4vBSh+iSx+F0tq6Xoa5g/PQ2M=
+    secure: l4m7hOr2nWmwSJnvY2eIelrVeEQURvC8Bt2pn6oXFUpBIW0ywZlh+zJSj/OCO/B3Al1/dgyos+AMmbfQ/OIfPglnQtuFyDla2ygfH05q2PXZ14w0CMGmx0T7tXlDXp2yAlAnm6gaiNMEOfs2iK7Jz2dGRuI1/Qc0WN4PFYRBUc9P+JZy6p4ThQaHnVpF2lF8tNKLmMCJ7YMPWGZvS9hkRNtYanV2jS37u5+h/B87ebOfncxnraI+t9XLD7S1SICgdO5UfU7KiNY5yhGKn4jUy3kbfjeq1YFJdFiaFw4FWGuT6gLsn8A9GcnXrFFsRES8ojXm/oeP5FVd/kGltjGvLDTiaNlrYBKss/Wu+pjjDx2RQ6GhTp4quyso8Xc4giAzltMb9vVNnk8sskReRLXrTUqcRKX4gvFfctwMB+o6LKQ1u1zg8aWSnlvU8tufevI7PeLix7nP3GBwde190vY3ixs5K41KsdgJlPukZN2nZjf/FdKlwAxcelcr9X41LO9ShDyo01Pdc/A/cryeT2ObbZoSbVp5dePHZR9NHUt308mLwc8EdwjsvZeZn+saNFWTY2jt4t8vCuIR5m75HBBCQQ26IgZoGhajeiXTSwshN3JY7d89Z2fmoayBNW+mQ1Dmc6M6ZIh23x4ceTe00rn+lpTr+yLR7YO9T9/o9ZUbLp4=
