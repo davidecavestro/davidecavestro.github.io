@@ -4,7 +4,7 @@ branches:
   only:
   - release # only take into account `release' branch
 rvm:
-- 2.2.0 # version of `ruby'
+- 2.1.2 # version of `ruby'
 
 env:
   global:
