@@ -1,28 +1,198 @@
----
-layout: null
-title : Atom Feed
----
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
- <title>{{ site.title | xml_escape }}</title>
- <link href="{{ site.production_url }}{{ site.JB.atom_path }}" rel="self"/>
- <link href="{{ site.production_url }}"/>
- <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>{{ site.production_url }}</id>
+ <title>Solipsistic chips</title>
+ <link href="http://davidecavestro.github.io/atom.xml" rel="self"/>
+ <link href="http://davidecavestro.github.io"/>
+ <updated>2019-03-25T05:54:59+00:00</updated>
+ <id>http://davidecavestro.github.io</id>
  <author>
-   <name>{{ site.author.name | xml_escape }}</name>
-   <email>{{ site.author.email }}</email>
+   <name>Davide Cavestro</name>
+   <email>davide.cavestro@gmail.com</email>
  </author>
 
- {% for post in site.posts limit:20 %}
+ 
  <entry>
-   <title>{{ post.title | xml_escape }}</title>
-   <link href="{{ site.production_url }}{{ post.url }}"/>
-   <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>{{ site.production_url }}{{ post.id }}</id>
-   <content type="html">{{ post.content | xml_escape }}</content>
+   <title>Rygel turned my Raspi3 into a DLNA movie player</title>
+   <link href="http://davidecavestro.github.io/tech/2019/03/24/rygel-raspi3-dlna-movie-player"/>
+   <updated>2019-03-24T00:00:00+00:00</updated>
+   <id>http://davidecavestro.github.io/tech/2019/03/24/rygel-raspi3-dlna-movie-player</id>
+   <content type="html">&lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
+&lt;ul class=&quot;sectlevel1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#the-need&quot;&gt;The need&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#the-solution&quot;&gt;The solution&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#practical-steps&quot;&gt;Practical steps&lt;/a&gt;
+&lt;ul class=&quot;sectlevel2&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#install-the-system&quot;&gt;Install the system&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#install-vlc-and-rygel&quot;&gt;Install VLC and Rygel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#auto-start-in-background&quot;&gt;Auto start in background&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#install-a-dlna-sender-on-the-smartphone&quot;&gt;Install a DLNA sender on the smartphone&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;the-need&quot;&gt;The need&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I have a Raspberry 3 placed behind a 10 years old plasma LG tv.
+Some years ago I configured Kodi and used it for some time, but
+eventually I dismissed it. Too heavy, too slow.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;That raspi3 continued serving some docker containers but it was
+underutilized&amp;#8230;&amp;#8203; so I started exploring some minimalistic alternative
+to heavyweight mediacenters, looking only for these features:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;play audio/video streams&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;remote control i.e. from a smartphone&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In the meantime I replaced my laptop hard disk with an SSD, so I
+attached it to an older raspberry 1 and got a minidlna media server.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I found some articles talking about&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://raspberrypi.stackexchange.com/questions/79004/howto-install-dlna-media-renderer&quot;&gt;using dlna to play audio&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://davidwiesner.github.io/posts/using-vlc-as-upnp-renderer-with-rygel/&quot;&gt;Using VLC as UPnP renderer with rygel&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;the-solution&quot;&gt;The solution&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I installed rygel but I got a lot of segfault and X server restart as
+soon as I started playing a movie. Then, after last updates, it started
+working like a charm.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;practical-steps&quot;&gt;Practical steps&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;install-the-system&quot;&gt;Install the system&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;So I started with a fresh Raspbian Stretch Lite
+&lt;a href=&quot;https://downloads.raspberrypi.org/raspbian_lite_latest&quot;&gt;image&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I installed LXQT to have a desktop environment.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;highlight&quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get update
+sudo apt-get install lightdm lxqt&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Then I gave a &lt;code&gt;sudo raspi-config&lt;/code&gt;, then hit &lt;em&gt;Boot Options&lt;/em&gt;, &lt;em&gt;Desktop / CLI&lt;/em&gt;
+and &lt;em&gt;Desktop Autologin&lt;/em&gt; in order to have the desktop environment
+available at boot.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;install-vlc-and-rygel&quot;&gt;Install VLC and Rygel&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;After a reboot I installed vlc and rygel&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;highlight&quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get install rygel vlc rygel-playbin&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;and issued a &lt;code&gt;sudo nano /etc/rygel.conf&lt;/code&gt; in order to enable the mpris
+support:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;/etc/rygel.conf&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;highlight&quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;[MPRIS]
+enabled=true&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;(MPRIS gives rygel control over VLC)&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;auto-start-in-background&quot;&gt;Auto start in background&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Rygel per-se is enough to play movies, but so far I&amp;#8217;ve not found an easy way
+to launch the player full screen. VLC can be started full screen in
+background, so that it appears only when needed, leaving the desktop
+available for other stuff when not playing movies.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This is how I start automatically VLC
+~/.config/autostart/vlc.desktop&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;highlight&quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Name=VLC as Media Renderer
+GenericName=UPnP/DLNA Rendering Services
+Comment=UPnP/DLNA Rendering Services
+# Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+Keywords=mediarenderer;play;audio;video;pictures;
+Exec=vlc --intf dummy --fullscreen
+Terminal=false
+Type=Application
+NoDisplay=false
+StartupNotify=true
+X-GNOME-Autostart-enabled=true
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=vlc
+X-GNOME-Bugzilla-Component=general
+X-GNOME-Bugzilla-Version=3.0.6&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I&amp;#8217;ve linked rygel desktop config
+&lt;code&gt;ln -s /usr/share/applications/rygel.desktop ~/.config/autostart/rygel.desktop&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Log out and log in again.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;install-a-dlna-sender-on-the-smartphone&quot;&gt;Install a DLNA sender on the smartphone&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Install a DLNA/UPnP Sender on the smartphone in order to control the
+player. I&amp;#8217;ve tried BubbleUPnP and AirPinCast, they both work.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Then it is just a matter of choosing the media you want to play from any
+DLNA source and stream it to the raspi renderer.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Enjoy your lighweight DLNA movie player!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content>
  </entry>
- {% endfor %}
+ 
  
 </feed>
