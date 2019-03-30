@@ -1,7 +1,7 @@
 = Rygel turned my Raspi3 into a DLNA movie player
 Davide Cavestro
 :page-category: Tech
-:page-tags: [raspberry, dlna, upnp, mediacenter]
+:page-tags: [raspberry, dlna, upnp, mediacenter, movie player, vlc, rygel]
 :page-short-name: rygel-raspi3-dlna-movie-player
 :page-summary: Installing Rygel and VLC on a raspbian is enough to remotely control with a smartphone the streaming of movies from a media server to a Raspberry Pi 3. No more need to install full-fledged, heavyweight media centers. 
 :toc: left
