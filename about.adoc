@@ -1,0 +1,15 @@
+= About
+layout: default
+:title: About this blog
+:page-short-name: about
+:page-summary: About this blog
+# About page
+
+I work in the software field, and published this site as a way to play 
+and learn with static site generators.
+
+So now this is the place where I shall share some random memos... mostly 
+software-related technical stuff.
+
+I hope they can be useful to other folks.
+And if not, at least I've learned a lot :-)
