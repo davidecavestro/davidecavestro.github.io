@@ -80,6 +80,7 @@ DEPENDENCIES
   jekyll-asciidoc
   jekyll-bootstrap
   jekyll-google-tag-manager
+  jekyll-seo-tag
   jekyll-sitemap
   jekyll-theme-minimal
   pygments.rb
