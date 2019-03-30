@@ -33,7 +33,7 @@ paginate_path: "posts/page:num/"
 # Else if you are pushing to username.github.io, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url : http://davidecavestro.github.io
+url : http://davidecavestro.github.io
 
 gems: ["jekyll-sitemap", "jekyll-asciidoc"]
 
@@ -122,6 +122,12 @@ JB :
     piwik :
         baseURL : 'myserver.tld/piwik' # Piwik installation address (without protocol)
         idsite : '1'                   # the id of the site on Piwik
+
+analytics :
+  provider : google
+  google : 
+    tracking_id : 'UA-136869486-1'
+
 google:
   tag_manager:
     container_id: GTM-M65MC47
