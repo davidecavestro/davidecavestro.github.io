@@ -5,12 +5,12 @@ layout: default
 :page-summary: About this blog
 # About page
 
-I work in the software field, and published this site as a way to play 
-and learn with static site generators.
+I work in the software field, and published this site as a way to 
+experiment with static site generators like jekyll.
 
-So now this is the place where I shall share some random memos, such as
-chips from my brain in a jar... at the end of the day nothing more than
-software-related technical stuff.
+So now there is this place where I shall share some random memos, like 
+chips from my brain in a jar.
+At the end of the day, nothing more than software-related technical stuff.
 
 I hope they can be useful to other folks.
 And if not, at least I've learned something :-)
