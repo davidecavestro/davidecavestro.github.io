@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>/tech/2019/03/24/rygel-raspi3-dlna-movie-player</loc>
+<loc>http://davidecavestro.github.io/tech/2019/03/24/rygel-raspi3-dlna-movie-player</loc>
 <lastmod>2019-03-24T00:00:00+00:00</lastmod>
 </url>
 <url>
-<loc>/archive</loc>
+<loc>http://davidecavestro.github.io/archive</loc>
 </url>
 <url>
-<loc>/categories</loc>
+<loc>http://davidecavestro.github.io/categories</loc>
 </url>
 <url>
-<loc>/</loc>
+<loc>http://davidecavestro.github.io/</loc>
 </url>
 <url>
-<loc>/pages</loc>
+<loc>http://davidecavestro.github.io/pages</loc>
 </url>
 <url>
-<loc>/tags</loc>
+<loc>http://davidecavestro.github.io/tags</loc>
 </url>
 </urlset>

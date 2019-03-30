@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>Solipsistic chips</title>
- <link href="http://davidecavestro.github.io/atom.xml" rel="self"/>
- <link href="http://davidecavestro.github.io"/>
- <updated>2019-03-30T05:29:12+00:00</updated>
- <id>http://davidecavestro.github.io</id>
+ <link href="/atom.xml" rel="self"/>
+ <link href=""/>
+ <updated>2019-03-30T05:35:01+00:00</updated>
+ <id></id>
  <author>
    <name>Davide Cavestro</name>
    <email>davide.cavestro@gmail.com</email>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Rygel turned my Raspi3 into a DLNA movie player</title>
-   <link href="http://davidecavestro.github.io/tech/2019/03/24/rygel-raspi3-dlna-movie-player"/>
+   <link href="/tech/2019/03/24/rygel-raspi3-dlna-movie-player"/>
    <updated>2019-03-24T00:00:00+00:00</updated>
-   <id>http://davidecavestro.github.io/tech/2019/03/24/rygel-raspi3-dlna-movie-player</id>
+   <id>/tech/2019/03/24/rygel-raspi3-dlna-movie-player</id>
    <content type="html">&lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
 &lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
 &lt;ul class=&quot;sectlevel1&quot;&gt;
