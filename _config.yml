@@ -21,6 +21,9 @@ theme: jekyll-theme-minimal
 gem "github-pages", group: :jekyll_plugins
 plugins:
 - jekyll-asciidoc
+- jekyll-seo-tag
+- jekyll-google-tag-manager
+- jekyll-sitemap
 
 paginate: 0
 paginate_path: "posts/page:num/"
@@ -35,7 +38,6 @@ paginate_path: "posts/page:num/"
 #
 url : http://davidecavestro.github.io
 
-gems: ["jekyll-sitemap", "jekyll-asciidoc"]
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
@@ -150,4 +152,12 @@ google:
   # and include your custom code. Your custom file must be defined at:
   #   ./_includes/custom/[HELPER]
   # where [HELPER] is the name of the helper you are overriding.
-  
+
+social:
+  name: Ben Balter
+  links:
+    - https://twitter.com/davide_cavestro
+    - https://www.linkedin.com/in/davidecavestro
+    - https://github.com/davidecavestro
+
+description : A place where I share random some memories

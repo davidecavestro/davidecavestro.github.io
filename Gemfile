@@ -10,4 +10,5 @@ group :jekyll_plugins do
   gem 'jekyll-asciidoc'
   gem 'jekyll-theme-minimal'
   gem 'jekyll-google-tag-manager'
+  gem 'jekyll-seo-tag'
 end
