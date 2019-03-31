@@ -81,3 +81,34 @@ h1, h2, h3, h4 {
   background: #57A957;
   border: 1px solid #4c964d;
   color: #FFF; }
+
+.navbar {
+  position: fixed;
+  width: 100%;
+}
+
+.sidenav {
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 80px;
+  left: 10px;
+  background: #eee;
+  overflow-x: hidden;
+  padding: 12px;
+}
+.sidenav ul {
+  padding: 8px;
+}
+
+
+.container {
+  margin-left: 230px; /* Same as the width of the sidebar */
+  padding: 40px 10px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}

@@ -52,7 +52,7 @@
     <!-- atom & rss feed -->
     <link href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
     <link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
-{% seo %}
+
   </head>
 
   <body>
@@ -87,6 +87,10 @@
           -->
         </div><!-- /.navbar-collapse -->
       </nav>
+
+      <div class="sidenav">
+		{{ page.document | tocify_asciidoc: 3 }}
+      </div>
 
       <div class="container">
         {{ content }}

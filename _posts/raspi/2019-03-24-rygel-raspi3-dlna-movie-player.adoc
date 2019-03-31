@@ -5,7 +5,7 @@ Davide Cavestro
 :page-short-name: rygel-raspi3-dlna-movie-player
 :page-summary: Installing Rygel and VLC on a raspbian is enough to remotely control with a smartphone the streaming of movies from a media server to a Raspberry Pi 3. No more need to install full-fledged, heavyweight media centers. 
 :page-description: Raspberry as a movie player controlled by smartphone, leveraging Rygel and VLC. No need to install full-fledged, heavyweight media centers. 
-:toc: left
+
 
 
 == The need
