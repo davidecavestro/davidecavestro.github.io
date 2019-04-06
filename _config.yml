@@ -154,10 +154,10 @@ google:
   # where [HELPER] is the name of the helper you are overriding.
 
 social:
-  name: Ben Balter
+  name: Davide Cavestro
   links:
     - https://twitter.com/davide_cavestro
     - https://www.linkedin.com/in/davidecavestro
     - https://github.com/davidecavestro
 
-description : A place where I share random some memories
+description : A place where I share some random memories
