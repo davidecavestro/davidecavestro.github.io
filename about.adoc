@@ -3,7 +3,6 @@ layout: default
 :title: About this blog
 :page-short-name: about
 :page-summary: About this blog
-# About page
 
 I work in the software field, and I published this site in order to play
 with static site generators like jekyll.
