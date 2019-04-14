@@ -21,12 +21,21 @@ theme: jekyll-theme-minimal
 gem "github-pages", group: :jekyll_plugins
 plugins:
 - jekyll-asciidoc
+- asciidoctor-diagram
 - jekyll-seo-tag
 - jekyll-google-tag-manager
 - jekyll-sitemap
 
 paginate: 0
 paginate_path: "posts/page:num/"
+
+keep_files:
+- images
+asciidoctor:
+  base_dir: :docdir
+  safe: unsafe
+  attributes:
+    imagesdir: /images
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 

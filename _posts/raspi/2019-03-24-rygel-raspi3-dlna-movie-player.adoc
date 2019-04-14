@@ -1,10 +1,10 @@
-= Rygel turned my Raspi3 into a DLNA movie player
+= Play videos on Raspberry pi 3 using VLC and a DLNA
 Davide Cavestro
 :page-category: Tech
 :page-tags: [raspberry, vlc, rygel, dlna, upnp, mediacenter, movie player]
 :page-short-name: rygel-raspi3-dlna-movie-player
 :page-summary: Installing Rygel and VLC on a raspbian is enough to remotely control with a smartphone the streaming of movies from a media server to a Raspberry Pi 3 Model B. No need to install heavyweight media centers.
-:page-description: Raspberry 3 as a movie player with Rygel and Vlc, controlled by smartphone.
+:page-description: Raspberry 3 as a movie player with Rygel and Vlc, controlled remotely by smartphone.
 :toc: left
 
 
@@ -32,9 +32,9 @@ I found some articles talking about
 
 == The solution
 
-I installed rygel but I got a lot of segfault and X server restart as 
-soon as I started playing a movie. Then, after last updates, it started 
-working like a charm.
+I installed Rygel, and at first I got a lot of segfault and X server 
+restarts as soon as I started playing a movie.
+Then, after last updates, it started working like a charm :-)
 
 
 == Practical steps
@@ -120,5 +120,23 @@ player. I've tried BubbleUPnP and AirPinCast, they both work.
 
 Then it is just a matter of choosing the media you want to play from any 
 DLNA source and stream it to the raspi renderer. 
+
+
+Just as a recap, this is the resulting system
+
+[ditaa]
+....
+/---------------------\       /---------------------------\          /-----------------\
+| cBLU  SERVER        |       | cBLU    RENDERER          |          |cBLUCONTROLLER   |
+| Minidlna/Readymedia |       |    Rygel - MPRIS - Vlc    |          |    Airpincast   |
++---------------------+       +---------------------------+          +-----------------+
+|                     | reads |                           | controls |                 |
+|    serve movies     |<------* sends audio/video to HDMI |<---------*    start/stop   |
+|                     |       |                           |          |                 |
++---------------------+       +---------------------------+          +-----------------+
+|c222 Raspberry Pi    |       |c222   Raspberry Pi 3      |          |c222Smartphone   |
+\---------------------/       \---------------------------/          \-----------------/
+
+....
 
 Enjoy your lighweight DLNA movie player!
