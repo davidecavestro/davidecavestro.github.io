@@ -5,13 +5,13 @@
         <description>Solipsistic chips - Davide Cavestro</description>
         <link></link>
         <atom:link href="/rss.xml" rel="self" type="application/rss+xml" />
-        <lastBuildDate>Sat, 06 Apr 2019 17:13:52 +0000</lastBuildDate>
-        <pubDate>Sat, 06 Apr 2019 17:13:52 +0000</pubDate>
+        <lastBuildDate>Sun, 14 Apr 2019 17:21:15 +0000</lastBuildDate>
+        <pubDate>Sun, 14 Apr 2019 17:21:15 +0000</pubDate>
         <ttl>60</ttl>
 
 
         <item>
-                <title>Rygel turned my Raspi3 into a DLNA movie player</title>
+                <title>Play videos on Raspberry pi 3 using VLC and a DLNA</title>
                 <description>&lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
 &lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
 &lt;ul class=&quot;sectlevel1&quot;&gt;
@@ -73,9 +73,9 @@ attached it to an older raspberry 1 and got a minidlna media server.&lt;/p&gt;
 &lt;h2 id=&quot;the-solution&quot;&gt;The solution&lt;/h2&gt;
 &lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;I installed rygel but I got a lot of segfault and X server restart as
-soon as I started playing a movie. Then, after last updates, it started
-working like a charm.&lt;/p&gt;
+&lt;p&gt;I installed Rygel, and at first I got a lot of segfault and X server
+restarts as soon as I started playing a movie.
+Then, after last updates, it started working like a charm :-)&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -181,6 +181,14 @@ player. I&amp;#8217;ve tried BubbleUPnP and AirPinCast, they both work.&lt;/p&gt
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;Then it is just a matter of choosing the media you want to play from any
 DLNA source and stream it to the raspi renderer.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Just as a recap, this is the resulting system&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;imageblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;img src=&quot;/images/diag-c0e667c60744415b5dae9e6b47c395c1.png&quot; alt=&quot;diag c0e667c60744415b5dae9e6b47c395c1&quot; width=&quot;920&quot; height=&quot;196&quot;&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;Enjoy your lighweight DLNA movie player!&lt;/p&gt;
