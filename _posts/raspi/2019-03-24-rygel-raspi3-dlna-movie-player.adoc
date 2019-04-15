@@ -128,8 +128,8 @@ Just as a recap, this is the resulting system
 ....
 /---------------------\       /---------------------------\          /-----------------\
 | cBLU  SERVER        |       | cBLU    RENDERER          |          |cBLUCONTROLLER   |
-| Minidlna/Readymedia |       |    Rygel - MPRIS - Vlc    |          |    Airpincast   |
 +---------------------+       +---------------------------+          +-----------------+
+| Minidlna/Readymedia |       |    Rygel - MPRIS - Vlc    |          |    Airpincast   |
 |                     | reads |                           | controls |                 |
 |    serve movies     |<------* sends audio/video to HDMI |<---------*    start/stop   |
 |                     |       |                           |          |                 |
