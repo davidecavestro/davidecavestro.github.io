@@ -1,4 +1,4 @@
-= Play videos on Raspberry pi 3 using VLC and a DLNA
+= Play movies on Raspberry pi using VLC and DLNA
 Davide Cavestro
 :page-category: Tech
 :page-tags: [raspberry, vlc, rygel, dlna, upnp, mediacenter, movie player]
@@ -131,7 +131,7 @@ Just as a recap, this is the resulting system
 +---------------------+       +---------------------------+          +-----------------+
 | Minidlna/Readymedia |       |    Rygel - MPRIS - Vlc    |          |    Airpincast   |
 |                     | reads |                           | controls |                 |
-|    serve movies     |<------* sends audio/video to HDMI |<---------*    start/stop   |
+|    serves movies    |<------* sends audio/video to HDMI |<---------*    start/stop   |
 |                     |       |                           |          |                 |
 +---------------------+       +---------------------------+          +-----------------+
 |c222 Raspberry Pi    |       |c222   Raspberry Pi 3      |          |c222Smartphone   |
